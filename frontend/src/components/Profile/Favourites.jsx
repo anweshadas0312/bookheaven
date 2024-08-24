@@ -12,7 +12,7 @@ const Favourites = () => {
   useEffect(() => {
     const fetch = async () => {
       const response = await axios.get(
-        "http://localhost:1000/api/v1/get-favourite-books",
+        "https://bookheaven-backend-xjw7.onrender.com/api/v1/get-favourite-books",
         { headers }
       );
       setFavouriteBooks(response.data.data);
@@ -28,15 +28,6 @@ const Favourites = () => {
           <img src="./star.png" alt="star" className="h-[20vh] my-8" />
         </div>
       )}
-
-      {/* <div className="grid grid-cols-4 sm:w-auto gap-4">
-        {FavouriteBooks &&
-          FavouriteBooks.map((items, i) => (
-            <div key={i}>
-              <BookCard data={items} favourite={true} />
-            </div>
-          ))}
-      </div> */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {FavouriteBooks &&
           FavouriteBooks.map((items, i) => (
