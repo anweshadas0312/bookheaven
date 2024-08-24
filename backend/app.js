@@ -8,6 +8,7 @@ const Books = require("./routes/book");
 const Favourite = require("./routes/favourite");
 const Cart = require("./routes/cart");
 const Order = require("./routes/order");
+const port = process.env.PORT || 1000;
 
 app.use(cors());
 app.use(express.json());
@@ -21,6 +22,6 @@ app.use("/api/v1",Order);
 
 
 // Creating port
-app.listen(process.env.PORT, ()=>{
-    console.log(`Server Started on ${process.env.PORT}`);
+app.listen(port, ()=>{
+    console.log(`Server Started on ${port}`);
 })
